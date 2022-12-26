@@ -16,8 +16,9 @@ jobs:
           name: "current files"
           command: ls -a
       - run: mix local.hex --force
+      - run: mix deps.get
       - run: mix loca.rebar --force
-      - run: mix.deps
+    
       - run: MIX_ENV=test mix test
       - run:
           name: Check formatted code
