@@ -1,0 +1,16 @@
+version: 4.0
+
+jobs:
+  build:
+    working_directory: "/elixir_app"
+    docker: 
+      - image: cimg/elixir:1.13.4
+    steps:
+      - checkout
+      - run: mix loca.rebar --force
+      - run: mix local.hedx --force
+      - run: mix.deps
+      - run: MIX_ENV=test mix test
+      - run:
+          name: Check formatted code
+          command: mix format --check-formatted
