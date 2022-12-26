@@ -2,10 +2,13 @@ version: 4.0
 
 jobs:
   build:
-    working_directory: "/elixir_app"
+    working_directory: "/home/circleci/elixir_app"
     docker: 
       - image: cimg/elixir:1.13.4
     steps:
+      - run:
+          name: "current directory"
+          command: echo pwd
       - run: chown -R $USER:$USER .
       - checkout
       - run: mix loca.rebar --force
