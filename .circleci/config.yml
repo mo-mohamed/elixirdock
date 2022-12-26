@@ -15,7 +15,7 @@ jobs:
       - run:
           name: "current files"
           command: ls -a
-      - run: mix local.hedx --force
+      - run: mix local.hex --force
       - run: mix loca.rebar --force
       - run: mix.deps
       - run: MIX_ENV=test mix test
