@@ -6,6 +6,7 @@ jobs:
     docker: 
       - image: cimg/elixir:1.13.4
     steps:
+      - run: chown -R $USER:$USER .
       - checkout
       - run: mix loca.rebar --force
       - run: mix local.hedx --force
