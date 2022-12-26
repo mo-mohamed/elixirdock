@@ -9,6 +9,9 @@ jobs:
       - run:
           name: "current directory"
           command: pwd
+      - run:
+          name: "current files"
+          command: ls -a
       - run: chown -R $USER:$USER .
       - checkout
       - run: mix local.hedx --force
