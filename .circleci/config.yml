@@ -1,4 +1,4 @@
-version: 4.0
+version: 2.1
 
 jobs:
   build:
@@ -13,7 +13,14 @@ jobs:
           name: "current files"
           command: ls -a
       - run: chown -R $USER:$USER .
-      - checkout
+      - checkout:
+          path: "/home/circleci/elixir_app"
+       - run:
+          name: "current directory"
+          command: pwd
+      - run:
+          name: "current files"
+          command: ls -a
       - run: mix local.hedx --force
       - run: mix loca.rebar --force
       - run: mix.deps
