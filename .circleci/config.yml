@@ -8,11 +8,11 @@ jobs:
     steps:
       - run:
           name: "current directory"
-          command: echo pwd
+          command: pwd
       - run: chown -R $USER:$USER .
       - checkout
-      - run: mix loca.rebar --force
       - run: mix local.hedx --force
+      - run: mix loca.rebar --force
       - run: mix.deps
       - run: MIX_ENV=test mix test
       - run:
