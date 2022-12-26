@@ -1,0 +1,11 @@
+FROM elixir:1.13-otp-25
+
+WORKDIR /app
+
+COPY . .
+
+RUN mix local.hex --force
+RUN mix do compile
+RUN MIX_ENV=test && mix test
+
+CMD ["mix", "phx.server"]
