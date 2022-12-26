@@ -5,21 +5,15 @@ jobs:
     working_directory: "/home/circleci/elixir_app"
     docker: 
       - image: cimg/elixir:1.13.4
-    steps:
+    steps:    
+      - run: chown -R $USER:$USER .
+      - checkout:
+          path: "/home/circleci/elixir_app"
       - run:
           name: "current directory"
           command: pwd
       - run:
           name: "current files"
-          command: ls -a
-      - run: chown -R $USER:$USER .
-      - checkout:
-          path: "/home/circleci/elixir_app"
-       - run:
-          name: "current directory 2"
-          command: pwd
-      - run:
-          name: "current files 2 "
           command: ls -a
       - run: mix local.hedx --force
       - run: mix loca.rebar --force
