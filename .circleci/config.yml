@@ -16,10 +16,10 @@ jobs:
       - checkout:
           path: "/home/circleci/elixir_app"
        - run:
-          name: "current directory"
+          name: "current directory 2"
           command: pwd
       - run:
-          name: "current files"
+          name: "current files 2 "
           command: ls -a
       - run: mix local.hedx --force
       - run: mix loca.rebar --force
