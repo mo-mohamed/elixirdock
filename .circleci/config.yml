@@ -32,8 +32,8 @@ workflows:
       - build
       - eb/deploy:
           context: aws-creds
-          environment-name: Elixirdock2-env
-          application-name: elixirdock2
+          environment-name: elix4-env
+          application-name: elix4-app
           filters:
             branches:
               only:
