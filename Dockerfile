@@ -16,6 +16,7 @@ RUN mix release
 
 
 FROM elixir:1.13-otp-25
+EXPOSE 80
 RUN useradd -m app
 WORKDIR '/my_app'
 COPY --from=builder /app/_build .
