@@ -35,7 +35,7 @@ workflows:
           environment-name: Elixirdock-env
           application-name: elixirdock
           platform-version: docker
-          label: "Sample Application"
+          label: version-2
           filters:
             branches:
               only:
