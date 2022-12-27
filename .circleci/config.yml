@@ -29,7 +29,7 @@ jobs:
 workflows:
   elastic-beanstalk-workflow:
     jobs:
-      # - build
+      - build
       - eb/deploy:
           context: aws-creds
           environment-name: elix4-env
@@ -38,5 +38,5 @@ workflows:
             branches:
               only:
                 - main
-          # requires:
-          #   - build
+          requires:
+            - build
