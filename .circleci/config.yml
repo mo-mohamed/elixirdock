@@ -33,6 +33,7 @@ workflows:
       - eb/deploy:
           context: aws-creds
           environment-name: Elixirdock-env
+          platform-version: docker
           filters:
             branches:
               only:
