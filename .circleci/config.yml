@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  eb: circleci/aws-elastic-beanstalk@1.0.0
+  eb: circleci/aws-elastic-beanstalk@2.0.1
 
 jobs:
   build:
@@ -33,6 +33,7 @@ workflows:
       - eb/deploy:
           context: aws-creds
           environment-name: Elixirdock-env
+          application-name: elixirdock
           platform-version: docker
           filters:
             branches:
