@@ -34,7 +34,7 @@ workflows:
           context: aws-creds
           environment-name: Elixirdock2-env
           application-name: elixirdock2
-          label: "version-4"
+          label: "version-5"
           filters:
             branches:
               only:
