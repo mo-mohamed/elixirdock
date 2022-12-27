@@ -1,9 +1,8 @@
 version: '3'
 services:
-  elixir-app:
+  web:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: dockerfile
     ports:
-      - "8080:4000"
-    
+      - '80:80'
