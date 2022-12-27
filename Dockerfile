@@ -1,4 +1,4 @@
-FROM elixir:1.13-otp-25 as builder
+FROM elixir:1.13-otp-25
 
 WORKDIR /app
 COPY . .
@@ -19,7 +19,7 @@ FROM elixir:1.13-otp-25
 EXPOSE 80
 RUN useradd -m app
 WORKDIR '/my_app'
-COPY --from=builder /app/_build .
+COPY --from=0 /app/_build .
 RUN chown -R app:app ./prod
 USER app
 CMD ["./prod/rel/elixirdock/bin/elixirdock", "start"]
